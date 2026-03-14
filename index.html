@@ -10,14 +10,13 @@
       margin: 0;
       padding: 0;
     }
-
     :root {
-      --bg-main: #050608;
-      --text-main: #f5f5f5;
-      --text-muted: #d7d7d7;
-      --accent: #ffb347;
-      --border-soft: rgba(255, 255, 255, 0.18);
-      --card-bg: #11131c;
+      --bg: #1a237e;
+      --bg-dark: #0d1560;
+      --text-main: #ffffff;
+      --text-muted: #c5cae9;
+      --red: #e63946;
+      --border-red: #e63946;
     }
 
     html,
@@ -26,10 +25,26 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-        Arial, sans-serif;
-      background: #000;
+      font-family: "Garamond", "EB Garamond", Georgia, serif;
+      background: var(--bg);
       color: var(--text-main);
+    }
+
+    h1, h2, h3,
+    .hero-title-main,
+    .hero-title-sub,
+    .repertuar-label,
+    .director-link,
+    .overlay-section-title,
+    .booking-header,
+    .purchase-title,
+    .program-date,
+    .overlay-close,
+    .buy-button,
+    .confirm-button,
+    .screen-label {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 700;
     }
 
     .page {
@@ -37,291 +52,110 @@
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      background: #000;
+      background: var(--bg);
     }
 
     /* HERO */
     .hero {
-      position: relative;
-      min-height: 100vh;
-      padding: 40px clamp(24px, 6vw, 80px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .hero-center {
-      position: relative;
-      z-index: 2;
+      padding: 48px clamp(24px, 6vw, 80px) 40px;
       text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.3em;
     }
 
-    .hero-kicker {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-    }
-
-    .hero-title {
-      font-size: clamp(34px, 6vw, 64px);
-      line-height: 1.08;
+    .hero-title-main {
+      font-size: clamp(36px, 8vw, 72px);
       font-weight: 700;
-      letter-spacing: 0.12em;
-    }
-
-    .hero-subtitle {
-      margin-top: 16px;
-      font-size: 14px;
-      letter-spacing: 0.24em;
-      color: var(--text-muted);
-    }
-
-    .hero-photos {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.7));
-    }
-
-    .hero-photo {
-      position: absolute;
-      width: 320px;
-      max-width: 50vw;
-      aspect-ratio: 16 / 9;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      border-radius: 0;
-      border: none;
-      overflow: visible;
-      transform-origin: center;
-      opacity: 0.95;
-    }
-
-    .hero-photo:nth-child(1) {
-      top: 14%;
-      left: 6%;
-      transform: rotate(-11deg);
-      background-image: url("lynch.png");
-    }
-
-    .hero-photo:nth-child(2) {
-      top: 4%;
-      right: 6%;
-      transform: rotate(8deg);
-      background-image: url("zulawsi.png");
-    }
-
-    .hero-photo:nth-child(3) {
-      bottom: 0%;
-      left: 22%;
-      transform: rotate(5deg);
-      background-image: url("COPPOLA.png");
-    }
-
-    .hero-photo:nth-child(4) {
-      bottom: -6%;
-      right: 16%;
-      transform: rotate(-7deg);
-      background-image: url("EGGERS.png");
-    }
-
-    .hero-gradient {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at center,
-        rgba(0, 0, 0, 0) 0,
-        rgba(0, 0, 0, 0.4) 48%,
-        rgba(0, 0, 0, 0.85) 100%
-      );
-      z-index: 1;
-    }
-
-    /* INTRO TEXT UNDER HERO */
-    .intro {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 32px clamp(24px, 5vw, 48px) 56px;
-      display: grid;
-      grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
-      gap: 32px;
-      color: #050608;
-      background: #ffffff;
-    }
-
-    .intro-address {
-      padding: 18px 20px;
-      border-radius: 10px;
-      border: 1px solid var(--border-soft);
-      background: radial-gradient(circle at top, #15182a 0, #050816 40%, #060613 100%);
-      color: var(--text-main);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .intro-label {
-      font-size: 13px;
+      color: var(--red);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent);
+      line-height: 1.1;
     }
 
-    .intro-address-main span {
-      display: block;
-      font-size: 16px;
+    .hero-title-sub {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 8px;
     }
 
-    .intro-description {
+    /* OPIS W RAMCE */
+    .intro-box {
+      max-width: 720px;
+      margin: 0 auto 48px;
+      padding: 32px clamp(24px, 5vw, 48px);
+      border: 2px solid var(--red);
+      color: var(--red);
       font-family: "Garamond", Georgia, serif;
+      font-size: clamp(15px, 2vw, 17px);
       line-height: 1.7;
-      font-size: 17px;
+      text-align: justify;
     }
 
-    .intro-description p + p {
-      margin-top: 10px;
+    .intro-box p + p {
+      margin-top: 12px;
     }
 
-    /* GALLERY SECTION */
-    .gallery {
-      background: #050608;
-      padding: 60px clamp(24px, 6vw, 64px) 80px;
-      color: var(--text-main);
+    /* TERAZ GRAMY / REPERTUAR */
+    .repertuar-section {
+      padding: 0 clamp(24px, 6vw, 80px) 64px;
+      text-align: center;
     }
 
-    .gallery-header {
-      max-width: 1100px;
-      margin: 0 auto 28px;
+    .repertuar-label {
+      font-size: clamp(18px, 2.5vw, 24px);
+      color: var(--red);
+      font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.24em;
-      font-size: 20px;
-      opacity: 0.9;
+      margin-bottom: 32px;
     }
 
-    .slider-viewport {
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .gallery-grid {
+    .directors-list {
       display: flex;
-      width: 100%;
-      transition: transform 0.5s ease;
-    }
-
-    .card {
-      position: relative;
-      cursor: pointer;
-      overflow: hidden;
-      border-radius: 18px;
-      background: #000;
-      border: none;
-      flex: 0 0 100%;
-      max-width: 100%;
-      min-height: min(72vh, 560px);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9);
-      transition: transform 0.28s ease, box-shadow 0.28s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 40px 90px rgba(0, 0, 0, 0.95);
-    }
-
-    .card-image {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      background-color: #000;
-      filter: saturate(1.15);
-      transform: scale(1.02);
-      transition: transform 0.4s ease, filter 0.4s ease;
-    }
-
-    .card:hover .card-image {
-      transform: scale(1.05);
-      filter: saturate(1.25);
-    }
-
-    .card-gradient {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.9) 0,
-        rgba(0, 0, 0, 0.35) 55%,
-        transparent 100%
-      );
-      pointer-events: none;
-    }
-
-    .card-content {
-      position: absolute;
-      inset-inline: 28px;
-      bottom: 26px;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      text-transform: uppercase;
-    }
-
-    .card-name {
-      font-size: 18px;
-      letter-spacing: 0.22em;
-    }
-
-    .card-dates {
-      font-size: 12px;
-      letter-spacing: 0.26em;
-      color: var(--text-muted);
-    }
-
-    .slider-nav {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      pointer-events: none;
-    }
-
-    .slider-button {
-      pointer-events: auto;
-      background: rgba(0, 0, 0, 0.7);
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: #fff;
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: center;
-      cursor: pointer;
-      margin-inline: 8px;
-      font-size: 20px;
-      transition: background 0.2s ease, transform 0.2s ease;
+      gap: 20px 48px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .slider-button:hover {
-      background: rgba(0, 0, 0, 0.9);
+    .director-link {
+      font-size: clamp(20px, 3vw, 32px);
+      font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .director-link:hover {
+      color: #ff6b6b;
       transform: translateY(-2px);
     }
 
-    /* DETAIL OVERLAY */
+    /* FOOTER */
+    .main-footer {
+      margin-top: auto;
+      padding: 24px clamp(24px, 6vw, 80px) 40px;
+      border-top: 2px solid var(--red);
+    }
+
+    .main-footer p {
+      text-align: center;
+      color: var(--red);
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      line-height: 1.8;
+    }
+
+    /* DETAIL OVERLAY – styl zgodny z mockupem */
     .overlay {
       position: fixed;
       inset: 0;
-      background: #050608;
+      background: var(--bg);
       display: none;
       z-index: 1000;
       color: var(--text-main);
@@ -334,97 +168,76 @@
 
     .overlay-header {
       position: relative;
-      height: min(420px, 60vh);
+      height: min(420px, 55vh);
       overflow: hidden;
+      background: var(--bg);
     }
 
     .overlay-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      filter: saturate(1.2);
-    }
-
-    .overlay-header-gradient {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.1) 0,
-        rgba(0, 0, 0, 0.9) 100%
-      );
-    }
-
-    .overlay-header-content {
-      position: absolute;
-      inset-inline: clamp(24px, 6vw, 80px);
-      bottom: 40px;
-    }
-
-    .overlay-name {
-      font-size: clamp(36px, 4.6vw, 56px);
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .overlay-bio {
-      max-width: 780px;
-      font-family: "Garamond", Georgia, serif;
-      font-size: 18px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      white-space: pre-line;
+      object-fit: contain;
+      object-position: center;
     }
 
     .overlay-close {
       position: absolute;
-      top: 24px;
-      left: 24px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      background: rgba(5, 6, 14, 0.92);
+      top: 20px;
+      left: 20px;
+      padding: 8px 12px;
+      background: var(--bg);
+      border: 2px solid var(--red);
       color: var(--text-main);
-      font-size: 14px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      font-size: 13px;
+      letter-spacing: 0.1em;
       cursor: pointer;
       z-index: 10;
     }
 
-    .overlay-close::before {
-      content: "←";
-      font-size: 18px;
+    .overlay-separator {
+      height: 4px;
+      background: var(--red);
+      margin: 0;
+      border: none;
     }
 
     .overlay-body {
-      padding: 40px clamp(24px, 6vw, 80px) 64px;
-      max-width: 1100px;
+      padding: 32px clamp(24px, 6vw, 80px) 64px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
-    .overlay-address {
-      margin-bottom: 28px;
-      font-size: 14px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
+    .overlay-bio {
+      max-width: 720px;
+      font-family: "Garamond", Georgia, serif;
+      font-size: 17px;
+      color: var(--text-main);
+      line-height: 1.7;
+      white-space: pre-line;
+      margin-bottom: 24px;
     }
 
-    .overlay-address strong {
-      color: var(--accent);
+    .overlay-separator-thin {
+      height: 1px;
+      background: var(--red);
+      margin: 24px 0;
+      border: none;
     }
 
     .overlay-section-title {
-      font-size: 24px;
-      margin-bottom: 22px;
+      font-size: 20px;
+      margin-bottom: 16px;
+      color: var(--red);
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.12em;
+    }
+
+    .overlay-address {
+      margin-top: 32px;
+      font-size: 14px;
+      color: var(--text-main);
+      text-align: right;
+      line-height: 1.8;
     }
 
     .program-list {
@@ -434,18 +247,17 @@
     }
 
     .program-day {
-      padding: 16px 18px;
-      border-radius: 10px;
-      border: 1px solid var(--border-soft);
-      background: #0b0d18;
+      padding: 16px 0;
+      border: none;
+      background: transparent;
     }
 
     .program-date {
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      font-size: 15px;
+      letter-spacing: 0.1em;
       margin-bottom: 8px;
-      color: var(--text-muted);
+      color: var(--red);
+      font-weight: 600;
     }
 
     .program-film {
@@ -460,10 +272,11 @@
     .program-title {
       font-weight: 500;
       flex: 1;
+      color: var(--red);
     }
 
     .program-meta {
-      opacity: 0.78;
+      color: var(--red);
       min-width: 150px;
       text-align: right;
       white-space: nowrap;
@@ -473,10 +286,10 @@
     .buy-button {
       margin-left: 16px;
       padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 0;
+      border: 2px solid var(--red);
       background: transparent;
-      color: #fff;
+      color: var(--red);
       font-size: 12px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -485,17 +298,17 @@
     }
 
     .buy-button:hover {
-      background: #fff;
-      color: #000;
+      background: var(--red);
+      color: #fff;
       transform: translateY(-1px);
     }
 
     .booking-panel {
       margin-top: 32px;
       padding: 20px 18px 24px;
-      border-radius: 12px;
-      border: 1px solid var(--border-soft);
-      background: #050713;
+      border-radius: 0;
+      border: 2px solid var(--red);
+      background: var(--bg);
       display: none;
       gap: 16px;
       flex-direction: column;
@@ -530,14 +343,14 @@
       font-size: 14px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--text-main);
     }
 
     .ticket-select {
       padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      background: #050713;
+      border-radius: 0;
+      border: 2px solid var(--red);
+      background: var(--bg);
       color: #fff;
       font-size: 14px;
       min-width: 90px;
@@ -555,7 +368,7 @@
       gap: 6px;
       padding: 16px 8px 10px;
       border-radius: 8px;
-      background: radial-gradient(circle at top, #111827 0, #020617 70%);
+      background: var(--bg);
       margin-bottom: 12px;
     }
 
@@ -564,9 +377,9 @@
       font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #9ca3af;
+      color: var(--red);
       padding: 6px 0 12px;
-      border-bottom: 2px solid rgba(148, 163, 184, 0.7);
+      border-bottom: 2px solid var(--red);
       margin: 0 8px 6px;
     }
 
@@ -575,16 +388,16 @@
       align-items: center;
       justify-content: center;
       font-size: 11px;
-      color: #9ca3af;
+      color: var(--text-muted);
       text-transform: uppercase;
     }
 
     .seat {
       width: 100%;
       padding: 9px 0 7px;
-      border-radius: 8px 8px 3px 3px;
-      border: 1px solid rgba(148, 163, 184, 0.9);
-      background: linear-gradient(to bottom, #1f2937 0%, #020617 100%);
+      border-radius: 0;
+      border: 1px solid var(--red);
+      background: #1e293b;
       font-size: 11px;
       color: #e5e7eb;
       cursor: pointer;
@@ -593,26 +406,26 @@
     }
 
     .seat.selected {
-      background: linear-gradient(to bottom, #fb923c 0%, #f97316 100%);
-      border-color: #fed7aa;
-      color: #111827;
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
       transform: translateY(-2px);
     }
 
     .seat.occupied {
-      background: #111827;
-      border-color: #4b5563;
-      color: #4b5563;
+      background: #1e293b;
+      border-color: #475569;
+      color: #64748b;
       cursor: not-allowed;
     }
 
     .confirm-button {
       align-self: flex-start;
       padding: 8px 18px;
-      border-radius: 999px;
-      border: none;
-      background: #f97316;
-      color: #111827;
+      border-radius: 0;
+      border: 2px solid var(--red);
+      background: var(--red);
+      color: #fff;
       font-size: 13px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -621,18 +434,18 @@
     }
 
     .confirm-button:hover {
-      background: #fb923c;
+      background: #ff6b6b;
+      border-color: #ff6b6b;
       transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
     }
 
     .purchase-panel {
       display: none;
       margin-top: 28px;
       padding: 20px 18px 22px;
-      border-radius: 12px;
-      border: 1px solid var(--border-soft);
-      background: #020617;
+      border-radius: 0;
+      border: 2px solid var(--red);
+      background: var(--bg);
     }
 
     .purchase-panel.active {
@@ -654,9 +467,9 @@
 
     .ticket-input {
       padding: 7px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      background: #020617;
+      border-radius: 0;
+      border: 2px solid var(--red);
+      background: var(--bg);
       color: #e5e7eb;
       font-size: 14px;
       min-width: min(260px, 100%);
@@ -667,69 +480,144 @@
     }
 
     @media (max-width: 900px) {
-      .intro {
-        grid-template-columns: minmax(0, 1fr);
+      .directors-list {
+        gap: 16px 32px;
       }
 
-      .hero-photo {
-        width: 44vw;
+      .overlay-body {
+        padding: 24px 20px 48px;
       }
 
-      .hero-photo:nth-child(1) {
-        left: -4%;
-      }
-
-      .hero-photo:nth-child(2) {
-        right: -8%;
-      }
-
-      .hero-photo:nth-child(3) {
-        left: 4%;
-      }
-
-      .hero-photo:nth-child(4) {
-        right: 0;
-      }
-
-      .slider-viewport {
-        max-width: 100%;
-      }
-
-      .card {
-        min-height: 60vh;
-      }
-
-      .slider-button {
-        width: 38px;
-        height: 38px;
-        font-size: 18px;
+      .repertuar-section {
+        padding: 0 20px 48px;
       }
     }
 
     @media (max-width: 640px) {
+      .hero {
+        padding: 32px 16px 28px;
+      }
+
+      .hero-title-main {
+        font-size: 26px;
+        letter-spacing: 0.06em;
+      }
+
+      .hero-title-sub {
+        font-size: 20px;
+        letter-spacing: 0.05em;
+      }
+
+      .intro-box {
+        margin: 0 16px 36px;
+        padding: 20px 16px;
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .repertuar-section {
+        padding: 0 16px 40px;
+      }
+
+      .repertuar-label {
+        font-size: 15px;
+        margin-bottom: 24px;
+        letter-spacing: 0.1em;
+      }
+
+      .directors-list {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .director-link {
+        font-size: 18px;
+        padding: 12px 0;
+        display: block;
+      }
+
+      .main-footer {
+        padding: 20px 16px 32px;
+      }
+
+      .main-footer p {
+        font-size: 13px;
+      }
+
       .overlay-close {
         left: 16px;
         top: 16px;
+        padding: 8px 0;
+        font-size: 13px;
       }
 
-      .gallery-header {
+      .overlay-header {
+        height: min(280px, 45vh);
+      }
+
+      .overlay-body {
+        padding: 24px 16px 40px;
+      }
+
+      .overlay-bio {
+        font-size: 15px;
+      }
+
+      .overlay-section-title {
         font-size: 16px;
-        letter-spacing: 0.18em;
-        text-align: center;
-      }
-
-      .card-content {
-        inset-inline: 18px;
-        bottom: 18px;
       }
 
       .program-film {
         flex-direction: column;
         align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 12px;
       }
 
       .program-meta {
         text-align: left;
+        min-width: auto;
+      }
+
+      .buy-button {
+        margin-left: 0;
+        margin-top: 4px;
+        padding: 10px 16px;
+        font-size: 11px;
+      }
+
+      .booking-panel {
+        padding: 16px;
+      }
+
+      .seats-grid {
+        grid-template-columns: 0.6fr repeat(10, minmax(0, 1fr));
+        gap: 4px;
+        padding: 12px 6px;
+      }
+
+      .seat {
+        padding: 6px 0;
+        font-size: 10px;
+      }
+
+      .overlay-address {
+        font-size: 13px;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero-title-main {
+        font-size: 22px;
+      }
+
+      .hero-title-sub {
+        font-size: 18px;
+      }
+
+      .seats-grid {
+        grid-template-columns: 0.5fr repeat(10, minmax(0, 1fr));
       }
     }
   </style>
@@ -737,48 +625,39 @@
 <body>
   <div class="page">
     <section class="hero">
-      <div class="hero-photos">
-        <div class="hero-photo"></div>
-        <div class="hero-photo"></div>
-        <div class="hero-photo"></div>
-        <div class="hero-photo"></div>
-      </div>
-      <div class="hero-gradient"></div>
-      <div class="hero-center">
-        <div class="hero-kicker">kino muza · poznań</div>
-        <div class="hero-title">PRZEGLĄD KINA MUZA</div>
-        <div class="hero-subtitle">cykl spotkań z autorskim kinem</div>
+      <h1 class="hero-title-main">Przegląd kina</h1>
+      <p class="hero-title-sub">w kinie Muza</p>
+    </section>
+
+    <div class="intro-box">
+      <p>Przegląd Kina to cykl wyjątkowych spotkań z filmem w Kinie Muza. W ramach serii prezentujemy starannie wybrane produkcje – od klasyki światowego kina po mniej oczywiste perełki.</p>
+      <p>Każde spotkanie to okazja, by zobaczyć film na dużym ekranie, odkryć nowe perspektywy i porozmawiać o kinie w inspirującej atmosferze. Przegląd Kina to przestrzeń dla wszystkich miłośników filmu – zarówno tych, którzy dopiero zaczynają swoją przygodę z ambitnym repertuarem, jak i dla doświadczonych kinomanów.</p>
+      <p>Zapraszamy na wspólne seanse i odkrywanie kina na nowo.</p>
+    </div>
+
+    <section class="repertuar-section">
+      <p class="repertuar-label">Teraz gramy:</p>
+      <div class="directors-list" id="directorsList">
+        <!-- Linki do reżyserów generowane w JS -->
       </div>
     </section>
 
-    <section class="gallery">
-      <div class="gallery-header">REPERTUAR</div>
-      <div class="slider-viewport">
-        <div class="gallery-grid" id="galleryGrid">
-          <!-- Slajdy generowane w JS -->
-        </div>
-        <div class="slider-nav">
-          <button class="slider-button" id="prevSlide" aria-label="Poprzedni reżyser">‹</button>
-          <button class="slider-button" id="nextSlide" aria-label="Następny reżyser">›</button>
-        </div>
-      </div>
-    </section>
+    <footer class="main-footer">
+      <p>Adres kina: Święty Marcin 30, Poznań</p>
+      <p>Kontakt mailowy: kinomuza@example.com</p>
+      <p>Kontakt telefoniczny: +48 61 123 45 67</p>
+    </footer>
   </div>
 
   <div class="overlay" id="overlay">
     <div class="overlay-header">
-      <button class="overlay-close" id="overlayClose">Powrót</button>
+      <button class="overlay-close" id="overlayClose">Powrót na stronę</button>
       <img class="overlay-img" id="overlayImg" alt="" />
-      <div class="overlay-header-gradient"></div>
-      <div class="overlay-header-content">
-        <div class="overlay-name" id="overlayName"></div>
-        <div class="overlay-bio" id="overlayBio"></div>
-      </div>
     </div>
+    <hr class="overlay-separator" />
     <div class="overlay-body">
-      <div class="overlay-address">
-        <strong>Kino Muza</strong> · Adres: Święty Marcin 30, Poznań
-      </div>
+      <div class="overlay-bio" id="overlayBio"></div>
+      <hr class="overlay-separator-thin" />
       <div class="overlay-section-title">Repertuar</div>
       <div class="program-list" id="programList"></div>
       <div class="booking-panel" id="bookingPanel">
@@ -836,6 +715,12 @@
             <input id="buyerPhone" name="buyerPhone" type="tel" class="ticket-input" placeholder="+48 ..." />
           </div>
         </form>
+      </div>
+      <hr class="overlay-separator-thin" />
+      <div class="overlay-address">
+        <p>Adres kina: Święty Marcin 30, Poznań</p>
+        <p>Kontakt mailowy: kinomuza@example.com</p>
+        <p>Kontakt telefoniczny: +48 61 123 45 67</p>
       </div>
     </div>
   </div>
@@ -1011,13 +896,10 @@
       },
     ];
 
-    const galleryGrid = document.getElementById("galleryGrid");
-    const prevSlide = document.getElementById("prevSlide");
-    const nextSlide = document.getElementById("nextSlide");
+    const directorsList = document.getElementById("directorsList");
     const overlay = document.getElementById("overlay");
     const overlayClose = document.getElementById("overlayClose");
     const overlayImg = document.getElementById("overlayImg");
-    const overlayName = document.getElementById("overlayName");
     const overlayBio = document.getElementById("overlayBio");
     const programList = document.getElementById("programList");
     const bookingPanel = document.getElementById("bookingPanel");
@@ -1031,27 +913,17 @@
     const purchaseSummary = document.getElementById("purchaseSummary");
 
     directors.forEach((director) => {
-      const card = document.createElement("button");
-      card.className = "card";
-      card.type = "button";
-      card.setAttribute("data-id", director.id);
-      card.innerHTML = `
-        <img src="${director.image}" alt="${director.name}" class="card-image" />
-        <div class="card-gradient"></div>
-        <div class="card-content">
-          <div class="card-name">${director.name}</div>
-          <div class="card-dates">${director.dates}</div>
-        </div>
-      `;
-      galleryGrid.appendChild(card);
+      const link = document.createElement("a");
+      link.className = "director-link";
+      link.href = "#";
+      link.setAttribute("data-id", director.id);
+      link.textContent = director.name.toUpperCase();
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        openOverlay(director.id);
+      });
+      directorsList.appendChild(link);
     });
-
-    let currentIndex = 0;
-
-    function updateSlider() {
-      const offset = -currentIndex * 100;
-      galleryGrid.style.transform = `translateX(${offset}%)`;
-    }
 
     let currentBooking = null;
 
@@ -1061,7 +933,6 @@
 
       overlayImg.src = director.image;
       overlayImg.alt = director.name;
-      overlayName.textContent = director.name;
       overlayBio.textContent = director.bio;
 
       programList.innerHTML = "";
@@ -1104,25 +975,6 @@
       overlay.classList.remove("active");
       document.body.style.overflow = "";
     }
-
-    galleryGrid.addEventListener("click", (event) => {
-      const target = event.target.closest(".card");
-      if (!target) return;
-      openOverlay(target.getAttribute("data-id"));
-    });
-
-    prevSlide.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + directors.length) % directors.length;
-      updateSlider();
-    });
-
-    nextSlide.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % directors.length;
-      updateSlider();
-    });
-
-    // start od pierwszego slajdu
-    updateSlider();
 
     overlayClose.addEventListener("click", closeOverlay);
 
