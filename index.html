@@ -13,7 +13,7 @@
     :root {
       --bg: #1a237e;
       --bg-dark: #0d1560;
-      --text-main: #ffffff;
+      --text-main: #e63946;
       --text-muted: #c5cae9;
       --red: #e63946;
       --border-red: #e63946;
@@ -195,7 +195,7 @@
     }
 
     .overlay-separator {
-      height: 4px;
+      height: 5px;
       background: var(--red);
       margin: 0;
       border: none;
@@ -216,13 +216,16 @@
       white-space: pre-line;
       margin-bottom: 24px;
     }
-
-    .overlay-separator-thin {
-      height: 1px;
-      background: var(--red);
-      margin: 24px 0;
-      border: none;
-    }
+  .overlay-separator-thin {
+    height: 5px;            /* wysokość thin separatora */
+    background: var(--red);
+    border: none;
+    margin: 20px 0;         /* odległość od treści góra/dół */
+    width: 100vw;           /* pełna szerokość viewportu */
+    position: relative;      /* żeby width działało względem viewportu */
+    left: 50%;               /* przesunięcie do środka */
+    transform: translateX(-50%); /* wyrównanie do lewej krawędzi ekranu */
+  }
 
     .overlay-section-title {
       font-size: 20px;
@@ -770,6 +773,7 @@
           "Był polskim reżyserem filmowym, scenarzystą i pisarzem, znanym z bezkompromisowego kina pełnego histerii, psychoseksualnych napięć i manierycznej gry aktorskiej. " +
           "Jego twórczość, często balansująca na granicy horroru i dramatu, eksploruje destrukcyjne emocje.\n\n" +
           "Przegląd: 8–10.09",
+          
         program: [
           {
             date: "08.09.26",
