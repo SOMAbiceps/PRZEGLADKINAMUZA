@@ -13,7 +13,7 @@
     :root {
       --bg: #1a237e;
       --bg-dark: #0d1560;
-      --text-main: #e63946;
+      --text-main: #ffffff;
       --text-muted: #c5cae9;
       --red: #e63946;
       --border-red: #e63946;
@@ -27,7 +27,7 @@
     body {
       font-family: "Garamond", "EB Garamond", Georgia, serif;
       background: var(--bg);
-      color: var(--text-main);
+      color: var(--red);
     }
 
     h1, h2, h3,
@@ -61,6 +61,8 @@
       text-align: center;
     }
 
+
+
     .hero-title-main {
       font-size: clamp(36px, 8vw, 72px);
       font-weight: 700;
@@ -68,6 +70,7 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       line-height: 1.1;
+      margin: 0;
     }
 
     .hero-title-sub {
@@ -103,9 +106,9 @@
     }
 
     .repertuar-label {
-      font-size: clamp(18px, 2.5vw, 24px);
+      font-size: clamp(28px, 5vw, 40px);
       color: var(--red);
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       margin-bottom: 32px;
@@ -121,7 +124,7 @@
     }
 
     .director-link {
-      font-size: clamp(20px, 3vw, 32px);
+      font-size: clamp(14px, 2.2vw, 22px);
       font-weight: 700;
       color: var(--red);
       text-transform: uppercase;
@@ -158,7 +161,7 @@
       background: var(--bg);
       display: none;
       z-index: 1000;
-      color: var(--text-main);
+      color: var(--red);
       overflow-y: auto;
     }
 
@@ -187,7 +190,7 @@
       padding: 8px 12px;
       background: var(--bg);
       border: 2px solid var(--red);
-      color: var(--text-main);
+      color: var(--red);
       font-size: 13px;
       letter-spacing: 0.1em;
       cursor: pointer;
@@ -195,7 +198,7 @@
     }
 
     .overlay-separator {
-      height: 5px;
+      height: 4px;
       background: var(--red);
       margin: 0;
       border: none;
@@ -207,25 +210,61 @@
       margin: 0 auto;
     }
 
+    .overlay-przeglad-head {
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .overlay-przeglad-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(8px, 2vw, 14px);
+      flex-wrap: wrap;
+    }
+
+    .overlay-przeglad-title {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 5vw, 40px);
+      color: var(--red);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .overlay-przeglad-sub {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: clamp(22px, 4vw, 32px);
+      color: var(--red);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .overlay-separator-after-przeglad {
+      margin-top: 20px;
+      margin-bottom: 28px;
+    }
+
     .overlay-bio {
       max-width: 720px;
       font-family: "Garamond", Georgia, serif;
       font-size: 17px;
-      color: var(--text-main);
+      color: var(--red);
       line-height: 1.7;
       white-space: pre-line;
       margin-bottom: 24px;
     }
-  .overlay-separator-thin {
-    height: 5px;            /* wysokość thin separatora */
-    background: var(--red);
-    border: none;
-    margin: 20px 0;         /* odległość od treści góra/dół */
-    width: 100vw;           /* pełna szerokość viewportu */
-    position: relative;      /* żeby width działało względem viewportu */
-    left: 50%;               /* przesunięcie do środka */
-    transform: translateX(-50%); /* wyrównanie do lewej krawędzi ekranu */
-  }
+
+    .overlay-separator-thin {
+      height: 1px;
+      background: var(--red);
+      margin: 24px 0;
+      border: none;
+    }
 
     .overlay-section-title {
       font-size: 20px;
@@ -238,27 +277,24 @@
     .overlay-address {
       margin-top: 32px;
       font-size: 14px;
-      color: var(--text-main);
+      color: var(--red);
       text-align: right;
       line-height: 1.8;
     }
 
     .program-list {
-      text-align: center;
       display: flex;
       flex-direction: column;
       gap: 14px;
     }
 
     .program-day {
-            text-align: center;
       padding: 16px 0;
       border: none;
       background: transparent;
     }
 
     .program-date {
-            text-align: center;
       font-size: 15px;
       letter-spacing: 0.1em;
       margin-bottom: 8px;
@@ -267,7 +303,6 @@
     }
 
     .program-film {
-            text-align: center;
       display: flex;
       justify-content: space-between;
       gap: 16px;
@@ -277,14 +312,12 @@
     }
 
     .program-title {
-            text-align: center;
       font-weight: 500;
       flex: 1;
       color: var(--red);
     }
 
     .program-meta {
-            text-align: center;
       color: var(--red);
       min-width: 150px;
       text-align: right;
@@ -336,7 +369,7 @@
 
     .booking-sub {
       font-size: 14px;
-      color: var(--text-muted);
+      color: var(--red);
       margin-bottom: 10px;
     }
 
@@ -352,7 +385,7 @@
       font-size: 14px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-main);
+      color: var(--red);
     }
 
     .ticket-select {
@@ -360,14 +393,14 @@
       border-radius: 0;
       border: 2px solid var(--red);
       background: var(--bg);
-      color: #fff;
+      color: var(--red);
       font-size: 14px;
       min-width: 90px;
     }
 
     .seats-legend {
       font-size: 12px;
-      color: var(--text-muted);
+      color: var(--red);
       margin-bottom: 8px;
     }
 
@@ -397,7 +430,7 @@
       align-items: center;
       justify-content: center;
       font-size: 11px;
-      color: var(--text-muted);
+      color: var(--red);
       text-transform: uppercase;
     }
 
@@ -408,7 +441,7 @@
       border: 1px solid var(--red);
       background: #1e293b;
       font-size: 11px;
-      color: #e5e7eb;
+      color: var(--red);
       cursor: pointer;
       text-align: center;
       transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
@@ -466,11 +499,12 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       margin-bottom: 10px;
+      color: var(--red);
     }
 
     .purchase-summary {
       font-size: 14px;
-      color: var(--text-muted);
+      color: var(--red);
       line-height: 1.6;
     }
 
@@ -479,7 +513,7 @@
       border-radius: 0;
       border: 2px solid var(--red);
       background: var(--bg);
-      color: #e5e7eb;
+      color: var(--red);
       font-size: 14px;
       min-width: min(260px, 100%);
     }
@@ -529,7 +563,7 @@
       }
 
       .repertuar-label {
-        font-size: 15px;
+        font-size: 32px;
         margin-bottom: 24px;
         letter-spacing: 0.1em;
       }
@@ -540,7 +574,7 @@
       }
 
       .director-link {
-        font-size: 18px;
+        font-size: 15px;
         padding: 12px 0;
         display: block;
       }
@@ -572,29 +606,41 @@
         font-size: 15px;
       }
 
+      .overlay-przeglad-title {
+        font-size: 26px;
+      }
+
+      .overlay-przeglad-sub {
+        font-size: 20px;
+      }
+
       .overlay-section-title {
         font-size: 16px;
       }
 
+      .program-day {
+        text-align: center;
+      }
+
       .program-film {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 4px;
         margin-bottom: 12px;
         text-align: center;
       }
 
       .program-meta {
-        text-align: left;
+        text-align: center;
         min-width: auto;
-                text-align: center;
       }
 
       .buy-button {
         margin-left: 0;
-        margin-top: 4px;
-        padding: 10px 16px;
+        margin-top: 8px;
+        padding: 10px 20px;
         font-size: 11px;
+        align-self: center;
       }
 
       .booking-panel {
@@ -636,7 +682,9 @@
 <body>
   <div class="page">
     <section class="hero">
-      <h1 class="hero-title-main">Przegląd kina</h1>
+      <div class="hero-title-row">
+        <h1 class="hero-title-main">Przegląd kina</h1>
+      </div>
       <p class="hero-title-sub">w kinie Muza</p>
     </section>
 
@@ -645,7 +693,6 @@
       <p>Każde spotkanie to okazja, by zobaczyć film na dużym ekranie, odkryć nowe perspektywy i porozmawiać o kinie w inspirującej atmosferze. Przegląd Kina to przestrzeń dla wszystkich miłośników filmu – zarówno tych, którzy dopiero zaczynają swoją przygodę z ambitnym repertuarem, jak i dla doświadczonych kinomanów.</p>
       <p>Zapraszamy na wspólne seanse i odkrywanie kina na nowo.</p>
     </div>
-
     <section class="repertuar-section">
       <p class="repertuar-label">Teraz gramy:</p>
       <div class="directors-list" id="directorsList">
@@ -665,8 +712,15 @@
       <button class="overlay-close" id="overlayClose">Powrót na stronę</button>
       <img class="overlay-img" id="overlayImg" alt="" />
     </div>
-    <hr class="overlay-separator" />
     <div class="overlay-body">
+      <div class="overlay-przeglad-head">
+        <div class="overlay-przeglad-title-row">
+          <img src="oczka.png" alt="" class="logo-oczka" width="40" height="40" />
+          <h2 class="overlay-przeglad-title">Przegląd kina</h2>
+        </div>
+        <p class="overlay-przeglad-sub">w kinie Muza</p>
+      </div>
+      <hr class="overlay-separator overlay-separator-after-przeglad" />
       <div class="overlay-bio" id="overlayBio"></div>
       <hr class="overlay-separator-thin" />
       <div class="overlay-section-title">Repertuar</div>
@@ -781,7 +835,6 @@
           "Był polskim reżyserem filmowym, scenarzystą i pisarzem, znanym z bezkompromisowego kina pełnego histerii, psychoseksualnych napięć i manierycznej gry aktorskiej. " +
           "Jego twórczość, często balansująca na granicy horroru i dramatu, eksploruje destrukcyjne emocje.\n\n" +
           "Przegląd: 8–10.09",
-          
         program: [
           {
             date: "08.09.26",
@@ -807,7 +860,7 @@
         id: "tarantino",
         name: "Quentin Tarantino",
         dates: "14–17.10",
-        image: "EGGERS.png",
+        image: "quentin.png",
         bio:
           "Amerykański reżyser, scenarzysta i aktor, uważany za jednego z najważniejszych twórców współczesnego postmodernizmu filmowego. " +
           "Znany z brutalności, błyskotliwych dialogów, nielinearnej narracji oraz pastiszowych nawiązań do popkultury.\n\n" +
