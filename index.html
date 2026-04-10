@@ -61,8 +61,6 @@
       text-align: center;
     }
 
-
-
     .hero-title-main {
       font-size: clamp(36px, 8vw, 72px);
       font-weight: 700;
@@ -70,7 +68,6 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       line-height: 1.1;
-      margin: 0;
     }
 
     .hero-title-sub {
@@ -215,14 +212,6 @@
       margin-bottom: 0;
     }
 
-    .overlay-przeglad-title-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: clamp(8px, 2vw, 14px);
-      flex-wrap: wrap;
-    }
-
     .overlay-przeglad-title {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: 700;
@@ -231,7 +220,6 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       line-height: 1.1;
-      margin: 0;
     }
 
     .overlay-przeglad-sub {
@@ -682,9 +670,7 @@
 <body>
   <div class="page">
     <section class="hero">
-      <div class="hero-title-row">
-        <h1 class="hero-title-main">Przegląd kina</h1>
-      </div>
+      <h1 class="hero-title-main">Przegląd kina</h1>
       <p class="hero-title-sub">w kinie Muza</p>
     </section>
 
@@ -714,10 +700,7 @@
     </div>
     <div class="overlay-body">
       <div class="overlay-przeglad-head">
-        <div class="overlay-przeglad-title-row">
-          <img src="oczka.png" alt="" class="logo-oczka" width="40" height="40" />
-          <h2 class="overlay-przeglad-title">Przegląd kina</h2>
-        </div>
+        <h2 class="overlay-przeglad-title">Przegląd kina</h2>
         <p class="overlay-przeglad-sub">w kinie Muza</p>
       </div>
       <hr class="overlay-separator overlay-separator-after-przeglad" />
