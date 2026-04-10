@@ -182,24 +182,16 @@
 
     .overlay-poster-frame {
       width: min(100%, 400px);
-      height: min(58vh, 600px);
-      min-height: 280px;
       max-width: calc(100vw - 32px);
       margin: 0 auto;
-      padding: 2px clamp(12px, 4vw, 20px) 14px;
+      padding: 2px clamp(12px, 4vw, 20px) 10px;
       box-sizing: border-box;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
+      display: block;
     }
 
     .overlay-img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
+      width: 100%;
       height: auto;
-      object-fit: contain;
-      object-position: center top;
       display: block;
     }
 
@@ -512,19 +504,12 @@
         width: 100%;
         max-width: 100%;
         margin: 0;
-        padding: 2px 0 14px;
-        height: min(76vh, calc(100vw * 1.5));
-        max-height: min(76vh, calc(100vw * 1.5));
-        min-height: min(50vh, calc(100vw * 1.25));
+        padding: 2px 0 10px;
       }
 
       .overlay-img {
         width: 100%;
-        height: 100%;
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        object-position: center top;
+        height: auto;
       }
     }
 
@@ -595,20 +580,13 @@
         width: 100%;
         max-width: none;
         margin: 0;
-        padding: 2px 0 12px;
+        padding: 2px 0 8px;
         box-sizing: border-box;
-        height: min(82vh, calc(100vw * 1.52));
-        max-height: min(82vh, calc(100vw * 1.52));
-        min-height: min(56vh, calc(100vw * 1.32));
       }
 
       .overlay-img {
         width: 100%;
-        height: 100%;
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        object-position: center top;
+        height: auto;
       }
 
       .overlay-body {
